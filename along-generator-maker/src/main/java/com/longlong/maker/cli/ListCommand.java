@@ -1,4 +1,4 @@
-package com.longlong.cli;
+package com.longlong.maker.cli;
 
 import cn.hutool.core.io.FileUtil;
 import picocli.CommandLine;
@@ -13,7 +13,7 @@ public class ListCommand implements Runnable {
     public void run() {
         String projectPath = System.getProperty("user.dir");
         // 整个项目的根路径
-        File parentFile = new File(projectPath).getParentFile();
+        File parentFile = new File(projectPath);
         // 输入路径
         String inputPath = new File(parentFile, "along-generator-demo-projects/acm-template").getAbsolutePath();
         List<File> files = FileUtil.loopFiles(inputPath);
